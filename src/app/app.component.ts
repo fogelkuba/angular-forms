@@ -44,7 +44,6 @@ export class AppComponent {
   // }
 
   onSubmit() {
-    console.log('alt');
     console.log(this.signupForm);
     this.user.username = this.signupForm.value.userData.username;
     this.user.email = this.signupForm.value.userData.email;
@@ -53,5 +52,7 @@ export class AppComponent {
     this.user.gender = this.signupForm.value.gender;
 
     this.submitted = true;
+
+    this.signupForm.reset();
   }
 }
