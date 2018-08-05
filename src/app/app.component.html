@@ -32,7 +32,7 @@
         <div class="form-group">
           <label for="secret">Secret Questions</label>
           <select
-            ngModel
+            [ngModel]="defaultQuestion"
             name="secret"
             id="secret"
             class="form-control">
