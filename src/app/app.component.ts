@@ -7,7 +7,7 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('f') signup: NgForm;
+  @ViewChild('f') signupForm: NgForm;
 
   defaultQuestion = 'teacher';
   answer = '';
@@ -15,6 +15,20 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    // this.signupForm.setValue({
+    //   userData: {
+    //     username: suggestedName,
+    //     email: 'su@su.com',
+    //   },
+    //   secret: 'pet',
+    //   questionAnswer: 'su',
+    //   gender: 'male'
+    // })
+    this.signupForm.form.patchValue({
+      userData: {
+        username: 'duper user'
+      }
+    })
   }
 
   // onSubmit(form: NgForm) {
@@ -23,7 +37,7 @@ export class AppComponent {
 
   onSubmit() {
     console.log('alt');
-    console.log(this.signup);
+    console.log(this.signupForm);
 
   }
 }
